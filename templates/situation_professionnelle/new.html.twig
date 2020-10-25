@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New SituationProfessionnelle{% endblock %}
+
+{% block body %}
+    <h1>Create new SituationProfessionnelle</h1>
+
+    {{ include('situation_professionnelle/_form.html.twig') }}
+
+    <a href="{{ path('situation_professionnelle_index') }}">back to list</a>
+{% endblock %}

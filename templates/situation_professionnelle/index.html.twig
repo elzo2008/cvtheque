@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SituationProfessionnelle index{% endblock %}
+
+{% block body %}
+    <h1>SituationProfessionnelle index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for situation_professionnelle in situation_professionnelles %}
+            <tr>
+                <td>{{ situation_professionnelle.id }}</td>
+                <td>{{ situation_professionnelle.description }}</td>
+                <td>
+                    <a href="{{ path('situation_professionnelle_show', {'id': situation_professionnelle.id}) }}">show</a>
+                    <a href="{{ path('situation_professionnelle_edit', {'id': situation_professionnelle.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('situation_professionnelle_new') }}">Create new</a>
+{% endblock %}
